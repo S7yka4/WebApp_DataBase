@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalcInputPage</title>
+    <h1>Ввод Данных для работы калькулятора</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CalcOutputPage", "Calc"))
+    {
+        <label>Первое число</label><br />
+        <input type="text" name="A" /><br /><br />
+        <label>Второе число</label><br />
+        <input type="text" name="B" /><br /><br />
+        <input type="submit" value="Перейти к результату" />
+    }
+</body>
+<tail>@Html.ActionLink("Вернуться в главное меню", "ProjectMenuPage", "Calc")</tail>
+</html>

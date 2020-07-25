@@ -1,0 +1,6 @@
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\obj\Debug\23.3.csprojAssemblyReference.cache
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\bin\Debug\23.3.exe.config
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\bin\Debug\23.3.exe
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\bin\Debug\23.3.pdb
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\obj\Debug\23.3.exe
+C:\Users\S7yka4\Documents\прога лабы\1\23.3\obj\Debug\23.3.pdb

@@ -1,0 +1,6 @@
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\obj\Debug\1.2.exe
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\obj\Debug\1.2.pdb
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\bin\Debug\1.2.exe.config
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\bin\Debug\1.2.exe
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\bin\Debug\1.2.pdb
+C:\Users\S7yka4\Documents\прога лабы\1\1.2\obj\Debug\14.2.csprojAssemblyReference.cache

@@ -1,0 +1,31 @@
+﻿@using CalcProject.Models;
+@using CalcProject.Manager;
+@model NumberSystem
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <h1>Вывод расчетов</h1>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalcOutputPage</title>
+</head>
+<body>
+    <textarea>
+        Число A == @Convert.ToString(Model.A)
+        Число B == @Convert.ToString(Model.B)
+        A+B == @Convert.ToString(Model.Summ())
+        A-B == @Convert.ToString(Model.Subtraction())
+        A*B == @Convert.ToString(Model.Multiplication())
+        A/B == @Convert.ToString(Model.Segmentation())
+        A в степени B == @Convert.ToString(Model.Pow())
+        Целая часть A/B == @Convert.ToString(Model.Div())
+        Остаток от A/B == @Convert.ToString(Model.Mod())
+    </textarea>
+    <link rel="Вохзврат в меню" href="ProjectMenuPage.cshtml">
+</body>
+<tail>@Html.ActionLink("Вернуться в главное меню", "ProjectMenuPage", "Calc")</tail>
+</html>

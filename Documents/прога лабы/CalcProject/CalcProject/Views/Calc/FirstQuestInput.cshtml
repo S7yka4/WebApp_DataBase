@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FirstQuest</title>
+    <h1>Ввод данных</h1>
+</head>
+<body>
+    @using (Html.BeginForm("FirstQuestOutput", "Calc"))
+    {
+        <lablel>Введите массив чисел в строку</lablel>
+        <input type="text" name="InputStr" /><br /><br />
+        <input type="submit" value="Перейти к результату" />
+    }
+</body>
+<tail>@Html.ActionLink("Вернуться в главное меню", "ProjectMenuPage", "Calc")</tail>
+</html>

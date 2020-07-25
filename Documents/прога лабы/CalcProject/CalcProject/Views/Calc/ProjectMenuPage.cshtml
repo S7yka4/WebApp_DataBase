@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    <h1>Главное меню</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CalcInputPage", "Calc"))
+    {
+        <button>Калькулятор</button>
+    }
+    @using (Html.BeginForm("FirstQuestInput", "Calc"))
+    {
+        <button>Решение задачи 1</button>
+    }
+    </body>
+</html>

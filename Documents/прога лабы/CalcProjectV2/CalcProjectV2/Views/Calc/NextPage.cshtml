@@ -1,0 +1,25 @@
+﻿@using CalcProjectV2.Manager;
+
+@model NumberSystem
+@{
+    ViewData["Title"] = "SumPage";
+}
+
+<h1>Вывод</h1>
+<body>
+    <label>Система счисления == @Convert.ToString(Model.K)</label>
+    <label>Результат == @Convert.ToString(Model.Result)</label>
+    @using (Html.BeginForm("Calculation", "Calc"))
+    {
+        <label>Новый член многочлена</label>
+        <br />
+        <input type="text" name="B" />
+        <br />
+        <button name="action" value="+">+</button>
+        <button name="action" value="-">-</button>
+        <button name="action" value="*">*</button>
+        <button name="action" value="/">/</button>
+
+    }
+</body>
+<tail>@Html.ActionLink("Вернуться в главное меню", "ProjectMenuPage")</tail>
