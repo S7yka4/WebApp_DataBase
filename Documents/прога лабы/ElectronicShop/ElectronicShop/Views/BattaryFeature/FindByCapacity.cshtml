@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.BattaryFeature>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Результаты поиска</h1>
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>Емкость Аккумулятора</label><br />@tmp.battaryCapacity<br />
+        <label>Напряжение Аккумулятора</label><br />@tmp.voltage<br />
+        <label>Токоотдача Аккумулятора</label><br />@tmp.currentOutput<br />
+        @using (Html.BeginForm("RedactBattery", "BattaryFeature", FormMethod.Get))
+        {
+            <a href="/BattaryFeature/Redactbattery/@tmp.id">Редактировать Характеристики</a>
+        }
+        @using (Html.BeginForm("DeleteBattery", "BattaryFeature", FormMethod.Get))
+        {
+            <a href="/BattaryFeature/DeleteBattery/@tmp.id">Удалить</a>
+        }
+        <br />
+        <br />
+        <br />
+        @using (Html.BeginForm("Output", "BattaryFeature", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Вернуться">
+
+            </div>
+        }
+    }
+</body>

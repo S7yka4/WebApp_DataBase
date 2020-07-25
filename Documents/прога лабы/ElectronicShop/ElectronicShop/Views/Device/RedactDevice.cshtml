@@ -1,0 +1,26 @@
+﻿@model ElectronicShop.Storage.Entity.Device;
+@{
+    ViewData["Title"] = "RedactBattery";
+}
+
+<h1>Изменить характеристики аккумулятора</h1>
+<body>
+    @using (Html.BeginForm("Redact", "Device", FormMethod.Post))
+    {
+            <input type="hidden" name="Id" value="@Model.id" />
+            <label>Название</label>
+            <input type="text" name="Name" value="@Model.name" /><br />
+            <label>Количество</label>
+            <input type="text" name="Count" value="@Model.count" /><br />
+            <input type="submit" value="Изменить">
+
+    }
+    @using (Html.BeginForm("Output", "Device", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

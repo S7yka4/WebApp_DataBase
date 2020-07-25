@@ -1,0 +1,26 @@
+﻿@model ElectronicShop.Storage.Entity.ResponsibleConsultant;
+@{
+    ViewData["Title"] = "RedactResponsibleConsultant";
+}
+
+<h1>Изменить характеристики консультанта</h1>
+<body>
+    @using (Html.BeginForm("Redact", "ResponsibleConsultant", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.CategoryId" />
+        <label>Имя</label>
+        <input type="text" name="Name" value="@Model.name" /><br />
+        <label>Оценка</label>
+        <input type="text" name="Mark" value="@Model.mark" /><br />
+        <input type="submit" value="изменить">
+    }
+    @using (Html.BeginForm("Output", "ResponsibleConsultant", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.PlaceInTop>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Информация о популярности</h1>
+<br />
+<br />
+<br />
+
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>Средний возраст</label><br />@tmp.middleAge<br />
+        <label>Больше среднего</label><br />@tmp.highAge<br />
+        <label>меньше среднего</label><br />@tmp.lowAge<br />
+        @using (Html.BeginForm("RedactPlaceInTop", "PlaceInTop", FormMethod.Get))
+        {
+            <a href="/PlaceInTop/RedactPlaceInTop/@tmp.id">Редактировать Характеристики</a>
+        }
+        @using (Html.BeginForm("DeletePlaceInTop", "PlaceInTop", FormMethod.Get))
+        {
+            <a href="/PlaceInTop/DeletePlaceInTop/@tmp.id">Удалить</a>
+        }
+        <br />
+        <br />
+        <br />
+    }
+   
+    <a href="/Category/Output/">Вернуть к категории устройства</a>
+    <br />
+    <br />
+    <br />
+
+</body>
+

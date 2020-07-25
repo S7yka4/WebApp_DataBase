@@ -1,0 +1,32 @@
+﻿@model Guid; 
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление характеристики</h1>
+</head>
+<body>
+
+
+
+    @using (Html.BeginForm("CreateNewFeature", "Feature", FormMethod.Post))
+    {
+
+        <label>Длительность гарантии</label>
+        <input type="text" name="warrantyDuration" /><br />
+        <label>Вес</label>
+        <input type="text" name="Weight" /><br />
+        <label>Мощность</label>
+        <input type="text" name="Power" /><br />
+        <input type="submit" value="Добавить">
+    }
+
+
+
+    @using (Html.BeginForm("Output", "Feature", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+        </div>
+    }
+</body>

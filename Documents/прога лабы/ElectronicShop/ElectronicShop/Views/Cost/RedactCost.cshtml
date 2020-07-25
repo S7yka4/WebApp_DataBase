@@ -1,0 +1,27 @@
+﻿@model ElectronicShop.Storage.Entity.Cost;
+@{
+    ViewData["Title"] = "RedactCost";
+}
+
+<h1>Изменить ценник</h1>
+<body>
+    @using (Html.BeginForm("Redact", "Cost", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.DeviceId" />
+        <label>В долларах</label>
+        <input type="text" name="CostInDollars" value="@Model.costInDollars" /><br />
+        <label>В рублях</label>
+        <input type="text" name="CostInRub" value="@Model.costInRub" /><br />
+       
+        <input type="submit" value="Изменить">
+    }
+    @using (Html.BeginForm("Output", "Cost", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

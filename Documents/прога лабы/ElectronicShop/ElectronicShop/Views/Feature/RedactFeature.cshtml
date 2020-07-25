@@ -1,0 +1,29 @@
+﻿@model ElectronicShop.Storage.Entity.Feature;
+@{
+    ViewData["Title"] = "RedactDevice";
+}
+
+<h1>Изменить характеристики устройства</h1>
+<body>
+    @using (Html.BeginForm("Redact", "Feature", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.DeviceId" />
+        <label>Длительность гарантии</label>
+        <input type="text" name="WarrantyDuration" value="@Model.warrantyduration" /><br />
+        <label>Вес</label>
+        <input type="text" name="Weight" value="@Model.weight" /><br />
+        <label>Мощность</label>
+        <input type="text" name="Power" value="@Model.power" /><br />
+        <input type="submit" value="изменить">
+
+    }
+    @using (Html.BeginForm("Output", "Feature", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

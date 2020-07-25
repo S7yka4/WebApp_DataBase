@@ -1,0 +1,25 @@
+﻿@model Guid;
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление Информации о популярности</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CreateNewPlaceInTop", "PlaceInTop", FormMethod.Post))
+    {
+        <label>Средний возраст</label>
+        <input type="text" name="MiddleAge" /><br />
+        <label>Меньше среднего</label>
+        <input type="text" name="LowAge" /><br />
+        <label>Больше среднего</label>
+        <input type="text" name="HighAge" /><br /> <br />
+        <input type="submit" value="Добавить">
+    }
+    @using (Html.BeginForm("Output", "PlaceInTop", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+        </div>
+    }
+</body>

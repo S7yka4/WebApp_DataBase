@@ -1,0 +1,24 @@
+﻿@model Guid;
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление нового ценника</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CreateNewCost", "Cost", FormMethod.Post))
+    {
+        <label>В долларах</label>
+        <input type="text" name="CostInDollars" /><br />
+        <label>В рублях</label>
+        <input type="text" name="CostInRub" /><br />
+        <input type="submit" value="Добавить">
+    }
+    @using (Html.BeginForm("Output", "Cost", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>

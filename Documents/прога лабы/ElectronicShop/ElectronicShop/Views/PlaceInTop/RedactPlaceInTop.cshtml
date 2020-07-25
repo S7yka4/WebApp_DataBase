@@ -1,0 +1,28 @@
+﻿@model ElectronicShop.Storage.Entity.PlaceInTop;
+@{
+    ViewData["Title"] = "RedactBattery";
+}
+
+<h1>Изменить информацию о популярности</h1>
+<body>
+    @using (Html.BeginForm("Redact", "PlaceInTop", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.CategoryId" />
+        <label>Средний возраст</label>
+        <input type="text" name="MiddleAge" value="@Model.middleAge" /><br />
+        <label>Больше среднего</label>
+        <input type="text" name="HighAge" value="@Model.highAge" /><br />
+        <label>Меньше среднего</label>
+        <input type="text" name="LowAge" value="@Model.lowAge" /><br /> <br />
+        <input type="submit" value="изменить">
+    }
+    @using (Html.BeginForm("Output", "PlaceInTop", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

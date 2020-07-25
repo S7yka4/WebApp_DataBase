@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.Cost>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Результаты поиска</h1>
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>Цена в рублях</label><br />@tmp.costInRub<br />
+        <label>Цена в долларах</label><br />@tmp.costInDollars<br />
+        @using (Html.BeginForm("RedactCost", "Cost", FormMethod.Get))
+        {
+            <a href="/Cost/RedactCost/@tmp.id">Редактировать Ценник</a>
+        }
+        @using (Html.BeginForm("DeleteCost", "Cost", FormMethod.Get))
+        {
+            <a href="/Cost/DeleteCost/@tmp.id">Удалить</a>
+        }
+        <br />
+        <br />
+        <br />
+        @using (Html.BeginForm("Output", "Cost", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Вернуться">
+
+            </div>
+        }
+    }
+</body>

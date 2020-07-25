@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.Device>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Список устройств</h1>
+<br />
+<br />
+<br />
+
+
+
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>название</label><br />@tmp.name<br />
+        <label>количество</label><br />@tmp.count<br />
+        <label>Id</label><br />@tmp.id<br />
+        @using (Html.BeginForm("AddNewFeature", "Feature", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Добавить Характеристику">
+        }
+        @using (Html.BeginForm("AddNewCost", "Cost", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Добавить Цену">
+        }
+        @using (Html.BeginForm("AddNewCategory", "Category", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Добавить Категорию">
+        }
+        @using (Html.BeginForm("RedactDevice", "Device", FormMethod.Get))
+        {
+            <a href="/Device/RedactDevice/@tmp.id">Редактировать</a>
+        }
+        @using (Html.BeginForm("DeleteDevice", "Device", FormMethod.Get))
+        {
+            <a href="/Device/DeleteDevice/@tmp.id">Удалить</a>
+        }
+        @using (Html.BeginForm("Output0", "Feature", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Посмотреть характеристики">
+        }
+        @using (Html.BeginForm("Output0", "Cost", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Посмотреть цену">
+        }
+        @using (Html.BeginForm("Output0", "Category", FormMethod.Get))
+        {
+            <input type="hidden" name="ForeignKey" value="@tmp.id">
+            <input type="submit" value="Посмотреть категорию">
+        }
+        <br />
+        <br />
+    }
+
+    @using (Html.BeginForm("AddNewDevice", "Device"))
+    {
+        <input type="submit" value="Добавить Устройство">
+    }
+    <br />
+    <br />
+    <br />
+
+</body>
+

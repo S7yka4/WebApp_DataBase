@@ -1,0 +1,30 @@
+﻿
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление характеристики</h1>
+</head>
+<body>
+
+
+
+    @using (Html.BeginForm("CreateNewDevice", "Device",FormMethod.Post))
+    {
+
+        <label>Название</label>
+        <input type="text" name="Name" /><br />
+        <label>количесвто</label>
+        <input type="text" name="Count" /><br />
+        <input type="submit" value="Добавить">
+    }
+
+
+
+    @using (Html.BeginForm("Output", "Device", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+        </div>
+    }
+</body>

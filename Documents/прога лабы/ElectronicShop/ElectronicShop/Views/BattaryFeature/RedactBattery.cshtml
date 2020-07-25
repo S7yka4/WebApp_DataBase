@@ -1,0 +1,28 @@
+﻿@model ElectronicShop.Storage.Entity.BattaryFeature;
+@{
+    ViewData["Title"] = "RedactBattery";
+}
+
+<h1>Изменить характеристики аккумулятора</h1>
+<body>
+    @using (Html.BeginForm("Redact", "BattaryFeature", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.FeatureId" />
+        <label>Ёмкость</label>
+        <input type="text" name="BattaryCapacity" value="@Model.battaryCapacity" /><br />
+        <label>Напрежение</label>
+        <input type="text" name="Voltage" value="@Model.voltage" /><br />
+        <label>Токоотдача</label>
+        <input type="text" name="CurrentOutput" value="@Model.currentOutput" /><br /> <br />
+        <input type="submit" value="Изменить">
+    }
+    @using (Html.BeginForm("Output", "BattaryFeature", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

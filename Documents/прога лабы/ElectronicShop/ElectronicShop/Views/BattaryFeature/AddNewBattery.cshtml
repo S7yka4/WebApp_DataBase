@@ -1,0 +1,26 @@
+﻿@model Guid;
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление новой батареи</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CreateNewBattary", "BattaryFeature", FormMethod.Post))
+    {
+        <label>Ёмкость</label>
+        <input type="text" name="BattaryCapacity" /><br />
+        <label>Напрежение</label>
+        <input type="text" name="Voltage" /><br />
+        <label>Токоотдача</label>
+        <input type="text" name="CurrentOutput" /><br /> <br />
+        <input type="submit" value="Добавить">
+    }
+    @using (Html.BeginForm("Output", "Feature", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>

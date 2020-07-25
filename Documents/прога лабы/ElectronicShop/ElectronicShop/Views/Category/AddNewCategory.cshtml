@@ -1,0 +1,28 @@
+﻿
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление Категории</h1>
+</head>
+<body>
+
+    
+
+    @using (Html.BeginForm("CreateNewCategory", "Category", FormMethod.Post))
+    {
+
+        <label>Название</label>
+        <input type="text" name="NameOfCategory" /><br />
+        <input type="submit" value="Добавить">
+    }
+
+
+
+    @using (Html.BeginForm("Output", "Category", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+        </div>
+    }
+</body>

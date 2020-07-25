@@ -1,0 +1,24 @@
+﻿@model Guid;
+@{ 
+    Layout = null;
+}
+<head>
+    <h1>Добавление консультанта</h1>
+</head>
+<body>
+    @using (Html.BeginForm("CreateNewResponsibleConsultant", "ResponsibleConsultant", FormMethod.Post))
+    {
+        <label>Имя</label>
+        <input type="text" name="Name" /><br />
+        <label>Оценка</label>
+        <input type="text" name="Mark" /><br />
+        <input type="submit" value="Добавить">
+    }
+    @using (Html.BeginForm("Output", "ResponsibleConsultant", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>

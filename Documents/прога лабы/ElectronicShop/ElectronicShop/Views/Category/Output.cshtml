@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.Category>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Список Категорий</h1>
+<br />
+<br />
+<br />
+
+
+
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>Название</label><br />@tmp.nameofcategory<br />
+        <label>DeviceId</label><br />@tmp.DeviceId<br />
+
+        @using (Html.BeginForm("RedactCategory", "Category", FormMethod.Get))
+        {
+            <a href="/Category/RedactCategory/@tmp.id">Редактировать</a>
+        }
+        @using (Html.BeginForm("DeleteCategory", "Category", FormMethod.Get))
+        {
+            <a href="/Category/DeleteCategory/@tmp.id">Удалить</a>
+        }
+        @using (Html.BeginForm("AddNewPlaceInTop", "PlaceInTop", FormMethod.Get))
+        {
+            <input type="hidden" value="@tmp.id" name="ForeignKey" />
+            <input type="submit" value="Добавить информацию о популярности" />
+        }
+        @using (Html.BeginForm("AddNewResponsibleConsultant", "ResponsibleConsultant", FormMethod.Get))
+        {
+            <input type="hidden" value="@tmp.id" name="ForeignKey" />
+            <input type="submit" value="Добавить консультанта" />
+        }
+        @using (Html.BeginForm("Output0", "PlaceInTop", FormMethod.Get))
+        {
+            <input type="hidden" value="@tmp.id" name="ForeignKey" />
+            <input type="submit" value="Посмотреть информацию о популярност" />
+        }
+        @using (Html.BeginForm("Output0", "ResponsibleConsultant", FormMethod.Get))
+        {
+            <input type="hidden" value="@tmp.id" name="ForeignKey" />
+            <input type="submit" value="Посмотреть информацию о консультантах" />
+        }
+        <br />
+        <br />
+    }
+    <a href="/Device/Output/">Вернуть к устройствам</a>
+    <br />
+    <br />
+    <br />
+
+</body>
+

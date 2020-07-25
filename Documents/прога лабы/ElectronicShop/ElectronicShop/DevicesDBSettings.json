@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DevicesDB": "Server=localhost;Database=DeviceDataBase;Trusted_Connection=True;MultipleActiveResultSets=true;Connect Timeout=15;Encrypt=False;Packet Size=4096"
+  }
+}

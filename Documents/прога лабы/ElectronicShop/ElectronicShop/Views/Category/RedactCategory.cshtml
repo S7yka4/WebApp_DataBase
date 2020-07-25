@@ -1,0 +1,25 @@
+﻿@model ElectronicShop.Storage.Entity.Category;
+@{
+    ViewData["Title"] = "RedactDevice";
+}
+
+<h1>Изменить Категорию</h1>
+<body>
+    @using (Html.BeginForm("Redact", "Category", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.id" />
+        <input type="hidden" name="FId" value="@Model.DeviceId" />
+        <label>Название</label>
+        <input type="text" name="NameOfCategory" value="@Model.nameofcategory" /><br />
+        <input type="submit" value="изменить">
+
+    }
+    @using (Html.BeginForm("Output", "Category", FormMethod.Get))
+    {
+        <div>
+            <input type="submit" value="Вернуться">
+
+        </div>
+    }
+</body>
+

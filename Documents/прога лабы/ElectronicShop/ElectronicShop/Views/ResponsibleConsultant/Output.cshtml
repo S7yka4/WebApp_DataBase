@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ElectronicShop.Storage.Entity.ResponsibleConsultant>;
+@{
+    ViewData["Title"] = "Output";
+}
+
+<h1>Характеристики Консультантов</h1>
+<br />
+<br />
+<br />
+
+<body>
+    @foreach (var tmp in Model)
+    {
+        <label>Id</label><br />@tmp.id<br />
+        <label>Имя</label><br />@tmp.name<br />
+        <label>Оценка</label><br />@tmp.mark<br />
+       
+        @using (Html.BeginForm("RedactResponsibleConsultant", "ResponsibleConsultant", FormMethod.Get))
+        {
+            <a href="/ResponsibleConsultant/RedactResponsibleConsultant/@tmp.id">Редактировать Характеристики</a>
+        }
+        @using (Html.BeginForm("DeleteResponsibleConsultant", "ResponsibleConsultant", FormMethod.Get))
+        {
+            <a href="/ResponsibleConsultant/DeleteResponsibleConsultant/@tmp.id">Удалить</a>
+        }
+        <br />
+        <br />
+        <br />
+    }
+
+    <a href="/Feature/Output/">Вернуть к Категории</a>
+    <br />
+    <br />
+    <br />
+
+</body>
+
