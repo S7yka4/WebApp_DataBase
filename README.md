@@ -1,0 +1,1 @@
+Web application for working with a relational database using ASP.NET core and the MVC pattern. In this application, you can add, delete, or change a representative of any of the entities represented.for some of the entities, you can search by several parameters.
